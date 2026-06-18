@@ -1,0 +1,56 @@
+{
+  "mcpServers": {
+    "filesystem-project": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant/src",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant/specs",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant/skills",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant/prompts",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant/tests",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant/infra",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant/docs/adr",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant/docs/runbooks"
+      ],
+      "description": "Read/write access to project code, specs, skills, prompts, tests, infra, and technical docs"
+    },
+    "filesystem-docs-readonly": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant/docs/novatech"
+      ],
+      "description": "Read-only access to NovaTech business documentation (source of truth)"
+    },
+    "filesystem-corpus-readonly": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant/data/retrieval-corpus"
+      ],
+      "description": "Read-only access to RAG retrieval corpus (chunks for testing)"
+    },
+    "git": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-git",
+        "--repository",
+        "/home/ers/src/ia-first/week-5/3-resultados/novatech-assistant"
+      ],
+      "description": "Git repository access for history, diffs, and branch information"
+    },
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "description": "Persistent memory for domain ubiquitous language and project decisions graph"
+    }
+  }
+}
